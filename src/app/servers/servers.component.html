@@ -1,3 +1,28 @@
 <p>servers works!</p>
-<app-server></app-server>
-<app-server></app-server>
+<!-- <input 
+    class="form-control" 
+    (input)="onInputData($event)"> -->
+<input 
+    class="form-control" 
+    [(ngModel)]="inputValue">
+<!-- <p>{{ inputValue }}</p> -->
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onServerCreation()">Add Server</button>
+<!-- <p [innerText]="allowNewServer"></p> -->
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<h3 *ngIf="serverCreated; else noServer">Server with {{ serverId }} and {{ serverCreationStatus }}</h3>
+<ng-template #noServer>
+    <p>No server Craeted</p>
+</ng-template>
+<p [ngStyle]="{backgroundColor: getColor()}"
+    [ngClass]="{ online: serverStatus === 'online' }">
+    Server Status is {{ serverStatus }}</p>
+
+    
+<p>Task 2</p>
+<input type="text" class="form-control" [(ngModel)]="username">
+<p>{{ username }}</p>
+<button class="btn btn-danger" [disabled]="username === ''" (click)="username = ''">Reset</button>
+<ul *ngFor="let item of serverList">
+    <li>{{ item }}</li>
+</ul>
+<app-server ></app-server>

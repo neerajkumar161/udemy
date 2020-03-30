@@ -1,3 +1,17 @@
-<h2>Hello App</h2>
+<!-- <h2>Hello App</h2>
 <hr>
 <app-servers></app-servers>
+<hr>
+<h3>Task 3</h3>
+<button class="btn btn-primary" (click)="onBtnClick()">Display Details</button>
+<p *ngIf="showMessage">Secret Password = tuna</p>
+<div 
+    *ngFor="let item of clickedArr; let i = index" 
+    [ngStyle]="{ backgroundColor: i >= 4 ? 'blue': 'white' }"
+    [ngClass]="{ valid: i >= 4 }">
+    {{ item }}
+</div> -->
+<h3>Hello app component</h3>
+<app-new
+*ngFor="let serverls of serverList" [server]="serverls">
+</app-new>
