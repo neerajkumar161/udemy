@@ -12,6 +12,13 @@
     {{ item }}
 </div> -->
 <h3>Hello app component</h3>
-<app-new
-*ngFor="let serverls of serverList" [server]="serverls">
+<div class="row">
+    <div class="col-xs-12">
+        <app-new (serverCreated)="onServerAdded($event)"
+        (bpCreated)="onBlueprintAdded($event)"
+        *ngFor="let serverls of serverList" [servElement]="serverls">
 </app-new>
+    </div>
+</div>
+
+

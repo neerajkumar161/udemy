@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -17,4 +17,20 @@ export class AppComponent {
   // }
 
   serverList = [{ type:'Test Type', name:'New TestServer', desc:'This is a test'}];
+
+  onServerAdded(serverData : { serverName: string, serverDesc: string}){
+    this.serverList.push({
+      type: 'New Server',
+      name: serverData.serverName,
+      desc: serverData.serverDesc
+    })
+  }
+
+  onBlueprintAdded(serverData : { serverName: string, serverDesc: string}){
+    this.serverList.push({
+      type: 'Blueprint',
+      name: serverData.serverName,
+      desc: serverData.serverDesc
+    })
+  }
 }
