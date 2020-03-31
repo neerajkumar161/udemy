@@ -17,6 +17,8 @@
         <app-new (serverCreated)="onServerAdded($event)"
         (bpCreated)="onBlueprintAdded($event)"
         *ngFor="let serverls of serverList" [servElement]="serverls">
+        <!-- Here ng-content  -->
+        {{ serverls.type + ' '+ serverls.name +' '+ serverls.desc }}
 </app-new>
     </div>
 </div>

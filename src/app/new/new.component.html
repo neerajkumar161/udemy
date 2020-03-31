@@ -25,6 +25,9 @@
             Add Server Blueprint
         </button>
     </div>
-    {{ server.type + ' '+ server.name +' '+ server.desc }}
+    <ng-content>
+        <!-- {{ serverls.type + ' '+ serverls.name +' '+ serverls.desc }} -->
+        <!-- Moved the content to app.component.html -->
+    </ng-content>
 
 </div>
